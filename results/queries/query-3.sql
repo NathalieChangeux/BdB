@@ -1,3 +1,4 @@
-SELECT number, date FROM orders
-WHERE date BETWEEN subdate(current_date, 1) AND adddate(current_date, 1)
+SELECT number, date 
+FROM orders
+WHERE date=date(NOW())
 ORDER By number DESC;

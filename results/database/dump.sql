@@ -86,11 +86,11 @@ CREATE TABLE `orders` (
 --
 
 INSERT INTO `orders` (`id`, `date`, `number`, `customer_id`) VALUES
-(1, '2021-06-04', 'order00001', 1),
+(1, '2021-06-07', 'order00001', 1),
 (2, '2021-05-31', 'order00002', 1),
 (3, '2021-05-31', 'order00003', 2),
 (4, '2021-05-31', 'order00004', 2),
-(5, '2021-06-04', 'order00005', 2);
+(5, '2021-06-07', 'order00005', 2);
 
 -- --------------------------------------------------------
 
@@ -100,8 +100,8 @@ INSERT INTO `orders` (`id`, `date`, `number`, `customer_id`) VALUES
 
 CREATE TABLE `order_product` (
   `id` int(11) NOT NULL,
-  `products_id` int(11) NOT NULL,
-  `orders_id` int(11) NOT NULL,
+  `product_id` int(11) NOT NULL,
+  `order_id` int(11) NOT NULL,
   `quantity` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -109,7 +109,7 @@ CREATE TABLE `order_product` (
 -- Dumping data for table `order_product`
 --
 
-INSERT INTO `order_product` (`id`, `products_id`, `orders_id`, `quantity`) VALUES
+INSERT INTO `order_product` (`id`, `product_id`, `order_id`, `quantity`) VALUES
 (1, 2, 1, 1),
 (2, 4, 1, 2),
 (3, 11, 2, 1),
