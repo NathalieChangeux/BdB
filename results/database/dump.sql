@@ -186,8 +186,8 @@ ALTER TABLE `orders`
 --
 ALTER TABLE `order_product`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `products_id` (`products_id`),
-  ADD KEY `orders_id` (`orders_id`);
+  ADD KEY `product_id` (`product_id`),
+  ADD KEY `order_id` (`order_id`);
 
 --
 -- Indexes for table `products`
@@ -244,8 +244,8 @@ ALTER TABLE `orders`
 -- Constraints for table `order_product`
 --
 ALTER TABLE `order_product`
-  ADD CONSTRAINT `order_product_ibfk_1` FOREIGN KEY (`products_id`) REFERENCES `products` (`id`),
-  ADD CONSTRAINT `order_product_ibfk_2` FOREIGN KEY (`orders_id`) REFERENCES `orders` (`id`);
+  ADD CONSTRAINT `order_product_ibfk_1` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`),
+  ADD CONSTRAINT `order_product_ibfk_2` FOREIGN KEY (`order_id`) REFERENCES `orders` (`id`);
 
 --
 -- Constraints for table `products`
